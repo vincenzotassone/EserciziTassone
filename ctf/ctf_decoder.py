@@ -19,3 +19,11 @@ def solve_level_3():
     hex_str = base64.b64decode(dato).decode()
     # Poi trasformiamo l'esadecimale in testo
     return bytes.fromhex(hex_str).decode()
+
+def solve_level_4():
+    dato = "Wm14aFozdGlOSE16WDNNeGVIUjVYMll3ZFhKZk1XNWpNM0IwTVRCdWZRPT0="
+    # Bisogna decodificare 3 volte!
+    passo1 = base64.b64decode(dato)
+    passo2 = base64.b64decode(passo1)
+    flag = base64.b64decode(passo2).decode()
+    return flag
