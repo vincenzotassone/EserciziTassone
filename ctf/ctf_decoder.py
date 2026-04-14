@@ -54,13 +54,14 @@ def solve_level_8():
     for i in range(len(pezzi)):
         if i % 2 == 0: # I pezzi pari sono Hex
             flag += bytes.fromhex(pezzi[i].strip()).decode()
-        else: # I pezzi dispari sono Base64
+        else:
             flag += base64.b64decode(pezzi[i].strip()).decode()
     return flag
 def solve_level_9():
     dato = "bXNobntqNDN6NHlfdDMzYXpfaTR6MzY0fQ=="
     testo = base64.b64decode(dato).decode()
-    # Questo è un Cifrario di Cesare con spostamento 13 (chiamato ROT13)
-    # Possiamo usare una funzione di sistema per farlo veloce
+
     import codecs
     return codecs.encode(testo, 'rot_13')
+def solve_level_10():
+    return "flag{p4ssw0rd_is_n0t_4_fl4g}"
