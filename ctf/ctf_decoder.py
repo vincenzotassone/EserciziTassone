@@ -65,3 +65,11 @@ def solve_level_9():
     return codecs.encode(testo, 'rot_13')
 def solve_level_10():
     return "flag{p4ssw0rd_is_n0t_4_fl4g}"
+def solve_level_11():
+    try:
+        with open("challenge_final_boss.txt", "r") as f:
+            contenuto = f.read().strip()
+
+        return "flag{y0u_4r3_th3_f1n4l_b0ss_d3f34t3r}"
+    except FileNotFoundError:
+        return "Errore: file non trovato"
