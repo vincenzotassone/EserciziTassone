@@ -38,3 +38,13 @@ def solve_level_6():
     # Rimuoviamo gli "00" inutili
     pulito = dato.replace("00", "")
     return bytes.fromhex(pulito).decode()
+def solve_level_7():
+    dato = "4e6a5932597a59784e6a6333596a63304e6a67334d6a4d7a4d7a4d315a6a5a6a4d7a51334f544d7a4e7a49334d7a566d4e6a517a4d7a4d7a4e7a41335a413d3d"
+    # Strato 1: Base64
+    s1 = base64.b64decode(dato).decode()
+    # Strato 2: Hex
+    s2 = bytes.fromhex(s1).decode()
+    # Strato 3: Base64 di nuovo
+    s3 = base64.b64decode(s2).decode()
+    # Strato 4: Hex finale
+    return bytes.fromhex(s3).decode()
