@@ -16,3 +16,17 @@ def encrypt(text, shift):
             # Se è uno spazio o una virgola, lascialo così com'è
             result += char
     return result
+
+
+def brute_force(ciphertext: str) -> list[tuple[int, str]]:
+    risultati = []  # Qui salveremo tutte le prove
+
+    for chiave in range(26):  # Prova i numeri da 0 a 25
+        # Decifriamo usando la chiave negativa
+        testo_decifrato = encrypt(ciphertext, -chiave)
+
+        # Salviamo la coppia (chiave, testo) in una "tupla"
+        # Una tupla è come una scatola chiusa con due valori: (5, "Hello")
+        risultati.append((chiave, testo_decifrato))
+
+    return risultati  # Restituisce tutta la lista di prove
