@@ -73,3 +73,27 @@ def solve_level_11():
         return "flag{y0u_4r3_th3_f1n4l_b0ss_d3f34t3r}"
     except FileNotFoundError:
         return "Errore: file non trovato"
+
+
+def main():
+    print("=== CTF DECODER ===\n")
+    funzioni = [
+        solve_level_1, solve_level_2, solve_level_3, solve_level_4,
+        solve_level_5, solve_level_6, solve_level_7, solve_level_8,
+        solve_level_9, solve_level_10, solve_level_11
+    ]
+
+    risolte = 0
+    for i, func in enumerate(funzioni, 1):
+        try:
+            flag = func()
+            print(f"Level {i:2d}: {flag}")
+            risolte += 1
+        except Exception as e:
+            print(f"Level {i:2d}: Errore nella decodifica")
+
+    print(f"\nRisolte: {risolte}/11 🏆")
+
+
+if __name__ == "__main__":
+    main()
