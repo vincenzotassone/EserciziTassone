@@ -27,3 +27,9 @@ def solve_level_4():
     passo2 = base64.b64decode(passo1)
     flag = base64.b64decode(passo2).decode()
     return flag
+def solve_level_5():
+    dato = "7d72337474346d5f73337479625f35647234776b6334627b67616c66"
+    # Inverto la stringa usando [::-1]
+    dato_dritto = dato[::-1]
+    # Ora che è dritta, decodifico l'esadecimale
+    return bytes.fromhex(dato_dritto).decode()
