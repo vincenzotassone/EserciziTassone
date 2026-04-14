@@ -33,3 +33,8 @@ def solve_level_5():
     dato_dritto = dato[::-1]
     # Ora che è dritta, decodifico l'esadecimale
     return bytes.fromhex(dato_dritto).decode()
+def solve_level_6():
+    dato = "0066006c00610067007b007a003300720030005f00700034006400640031006e0067005f0033007600330072007900770068003300720033007d"
+    # Rimuoviamo gli "00" inutili
+    pulito = dato.replace("00", "")
+    return bytes.fromhex(pulito).decode()
