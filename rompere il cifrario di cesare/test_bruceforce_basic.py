@@ -2,7 +2,6 @@
 
 import pytest
 
-# Import verificato con try/except
 try:
     from caesar_breaker import brute_force
 except ImportError:
