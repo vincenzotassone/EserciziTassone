@@ -48,3 +48,12 @@ def solve_level_7():
     s3 = base64.b64decode(s2).decode()
     # Strato 4: Hex finale
     return bytes.fromhex(s3).decode()
+def solve_level_8():
+    pezzi = ["666c6167", "e20xeA==", "5f346e64", "X200dA==", "63685f33", " bmMwZA==", "316e6735", "fQ=="]
+    flag = ""
+    for i in range(len(pezzi)):
+        if i % 2 == 0: # I pezzi pari sono Hex
+            flag += bytes.fromhex(pezzi[i].strip()).decode()
+        else: # I pezzi dispari sono Base64
+            flag += base64.b64decode(pezzi[i].strip()).decode()
+    return flag
