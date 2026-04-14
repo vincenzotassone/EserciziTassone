@@ -12,3 +12,10 @@ def solve_level_2():
     p2 = p2_int.to_bytes(lunghezza, 'big').decode()
 
     return p1 + p2
+
+def solve_level_3():
+    dato = "NjY2YzYxNjc3YjZjMzQ3OTMzNzIzNTVmMzA2ZTVmNmMzNDc5MzM3MjM1N2Q="
+    # Prima togliamo il Base64, otteniamo una stringa esadecimale
+    hex_str = base64.b64decode(dato).decode()
+    # Poi trasformiamo l'esadecimale in testo
+    return bytes.fromhex(hex_str).decode()
