@@ -14,8 +14,17 @@ def encrypt(text, shift):
 def brute_force(ciphertext: str) -> list[tuple[int, str]]:
     risultati = []
 
-    for chiave in range(26):  
+    for chiave in range(26):
         testo_decifrato = encrypt(ciphertext, -chiave)
         risultati.append((chiave, testo_decifrato))
 
     return risultati
+
+
+def main():
+    testo_cifrato = input("Inserisci il testo cifrato: ")
+
+    tentativi = brute_force(testo_cifrato)
+
+    for chiave, testo in tentativi:
+        print(f"Chiave {chiave:2d}: {testo}")
